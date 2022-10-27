@@ -5,6 +5,8 @@ from posts.models import Post
 
 def register(request):
     return render(request, 'register1.html')
+
+
 def index(request):
     posts = Post.objects.all ()
     context = {

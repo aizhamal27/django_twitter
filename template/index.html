@@ -44,6 +44,7 @@
       rel="stylesheet"
     />
   </head>
+  {% if user.is_authenticated %}
   <body class="bg-light">
     <div class="web-none d-flex align-items-center px-3 pt-3">
       <a href="{% static 'index.html' %}" class="text-decoration-none">
@@ -3819,6 +3820,10 @@
         </div>
       </div>
     </div>
+    {% else %}
+    {% include 'login1.html' %}
+    {% endif %}
+    
 
     <script
       src="{% static 'vendor/jquery/jquery.min.js' %}"

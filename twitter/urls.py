@@ -16,15 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from posts.views import index
-from users.views import register, login
+from users.views import register, user_login
 from django.conf import settings
 from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('twitter/', index, name='index'),
     path('', index,name ='index'),
-    path('login/', login, name = 'login'),
+    path('login/', user_login, name = 'login'),
+    path('register/', register, name = 'register')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
